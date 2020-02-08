@@ -1,0 +1,30 @@
+{
+  "name": "chessimage",
+  "version": "1.0.0",
+  "description": "Generate images based on various forms of chess notation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyruwruw/chessimage.git"
+  },
+  "keywords": [
+    "Chess",
+    "GIF",
+    "PNG",
+    "JPG",
+    "Image",
+    "Animation"
+  ],
+  "author": "Andrew Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andyruwruw/chessimage/issues"
+  },
+  "homepage": "https://github.com/andyruwruw/chessimage#readme",
+  "dependencies": {
+    "chess.js": "^0.10.2"
+  }
+}
