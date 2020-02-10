@@ -1,10 +1,10 @@
 {
-  "name": "chessimage",
+  "name": "chess-image-generator",
   "version": "1.0.0",
   "description": "Generate images based on various forms of chess notation.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "node ./__test__/test.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,10 @@
   },
   "homepage": "https://github.com/andyruwruw/chessimage#readme",
   "dependencies": {
-    "chess.js": "^0.10.2"
+    "canvas": "^2.6.1",
+    "canvas-to-buffer": "^1.1.0",
+    "chess.js": "^0.10.2",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }
