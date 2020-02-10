@@ -224,6 +224,8 @@ There are `five styles` to choose from:
 - leipzig
 - merida 
 
+All images were found at [Marcel van Kervinck](https://marcelk.net/chess/pieces/)! Thanks :)
+
 ### alpha
 ![alpha](./src/resources/alpha/WhiteKing.png)
 ### cburnett
@@ -297,3 +299,7 @@ Takes loaded board and generates `PNG` based on `options`. Saves image to desire
 | path | `string` | Path of where to save PNG, relative to method call. |
 
 ---
+
+## HOPE YOU MAKE SOME COOL STUFF!
+![dog](https://media.giphy.com/media/100QWMdxQJzQC4/giphy.gif)
+### - Andrew Young
