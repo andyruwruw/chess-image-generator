@@ -157,7 +157,7 @@ hxg5 29. b3 Ke6 30. a3 Kd6 31. axb4 cxb4 32. Ra5 Nd5 33. f3 Bc8 34. Kf2 Bf5
 Nf2 42. g4 Bd3 43. Re6 1/2-1/2
 ```
 
-*It has a lot of different data, and can have more or less. But always has the moves in a list at the end. If you're [intersted in more go here](https://en.wikipedia.org/wiki/Portable_Game_Notation).*
+*It has a lot of different data, and can have more or less. But always has the moves in a list at the end. If you're [interested in more go here](https://en.wikipedia.org/wiki/Portable_Game_Notation).*
 
 *[Chess.com's Published-Data API](https://www.chess.com/news/view/published-data-api) returns games in this format. If you want to use their API check out the [chess-web-api](https://www.npmjs.com/package/chess-web-api) wrapper I created for it!.*
 
@@ -400,6 +400,6 @@ All images were found at [Marcel van Kervinck](https://marcelk.net/chess/pieces/
 
 ---
 
-## HOPE YOU MAKE SOME COOL STUFF!
+## Hope you make some cool stuff!
 ![dog](https://media.giphy.com/media/100QWMdxQJzQC4/giphy.gif)
 ### - Andrew Young
