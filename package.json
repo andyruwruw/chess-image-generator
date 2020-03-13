@@ -4,7 +4,7 @@
   "description": "Generate images based on various forms of chess notation.",
   "main": "src/index.js",
   "scripts": {
-    "test": "node ./__test__/test.js"
+    "test": "node ./test/index.js"
   },
   "repository": {
     "type": "git",

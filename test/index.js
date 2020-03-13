@@ -1,4 +1,4 @@
-let ChessImageGenerator = require('../src/index.js');
+let ChessImageGenerator = require('chess-image-generator');
 
 let runTests = async function() {
     try {
