@@ -1,2 +1,3 @@
-var ChessImageGenerator = require('./chess-image-generator');
+const ChessImageGenerator = require('./chess-image-generator');
+
 module.exports = ChessImageGenerator;
