@@ -1,6 +1,6 @@
 {
   "name": "chess-image-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generate images based on various forms of chess notation.",
   "main": "src/index.js",
   "scripts": {
