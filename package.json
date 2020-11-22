@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andyruwruw/chessimage.git"
+    "url": "git+https://github.com/andyruwruw/chess-image-generator.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
