@@ -109,30 +109,29 @@ ChessImageGenerator.prototype = {
 
     for (let i = 0; i < 8; i += 1) {
       for (let j = 0; j < 8; j += 1) {
+       
         if ((i + j) % 2 === 0) {
           ctx.beginPath();
           ctx.rect(
-            ((this.size / 8) * j),
-            ((this.size / 8) * i),
-            (this.size / 8),
-            (this.size / 8),
+            ((this.size / 8) * ((7-j)+1))  - (this.size / 8),
+            ((this.size / 8) * (i)) ,
+            (this.size / 8) ,
+            (this.size / 8) 
           );
           ctx.fillStyle = this.dark;
           ctx.fill();
         }
-
+         
         const piece = this.chess.get(cols[7 - j] + ((7 - i) + 1));
-
-        if (piece && piece.type !== '' && black.includes(piece.type.toLowerCase())) {
+         if (piece && piece.type !== '' && black.includes(piece.type.toLowerCase())) {
           const image = `resources/${this.style}/${filePaths[`${piece.color}${piece.type}`]}.png`;
-
           const imageFile = await loadImage(path.join(__dirname, image));
           await ctx.drawImage(
             imageFile,
-            ((this.size / 8) * j) + (this.size / 200),
-            ((this.size / 8) * i) + (this.size / 200),
-            (this.size / 8) - (this.size / 100),
-            (this.size / 8) - (this.size / 100),
+            ((this.size / 8) * ((7-j)+1))  - (this.size / 8),
+            ((this.size / 8) * (i)) ,
+            (this.size / 8) ,
+            (this.size / 8) 
           );
         }
       }
