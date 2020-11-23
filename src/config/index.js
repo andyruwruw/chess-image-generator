@@ -1,18 +1,18 @@
-export const cols = 'abcdefgh';
+const cols = 'abcdefgh';
 
-export const white = 'PBNRQK';
+const white = 'PBNRQK';
 
-export const black = 'pbnrqk';
+const black = 'pbnrqk';
 
-export const defaultSize = 480;
+const defaultSize = 480;
 
-export const defaultLight = 'rgb(181, 136, 99)';
+const defaultLight = 'rgb(181, 136, 99)';
 
-export const defaultDark = 'rgb(240, 217, 181)';
+const defaultDark = 'rgb(240, 217, 181)';
 
-export const deafultStyle = 'merida';
+const deafultStyle = 'merida';
 
-export const filePaths = {
+const filePaths = {
   wp: 'WhitePawn',
   bp: 'BlackPawn',
   wb: 'WhiteBishop',
@@ -25,4 +25,15 @@ export const filePaths = {
   bq: 'BlackQueen',
   wk: 'WhiteKing',
   bk: 'BlackKing',
+};
+
+module.exports = {
+  cols,
+  white,
+  black,
+  defaultSize,
+  defaultLight,
+  defaultDark,
+  deafultStyle,
+  filePaths,
 };
