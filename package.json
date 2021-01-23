@@ -15,8 +15,7 @@
     "GIF",
     "PNG",
     "JPG",
-    "Image",
-    "Animation"
+    "Image"
   ],
   "author": "Andrew Young",
   "license": "MIT",
