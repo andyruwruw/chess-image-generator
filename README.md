@@ -29,7 +29,7 @@ Output to either:
 
 - [Installation](#installation)
 - [Loading in a Chess Position](#loading-in-a-chess-position)
-    - [FEN](#loading-by-fend)
+    - [FEN](#loading-by-fen)
     - [PGN](#loading-by-pgn)
     - [Array of Characters](#loading-by-array)
 - [Generating Images](#generate-an-image)
