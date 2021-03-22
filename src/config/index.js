@@ -6,9 +6,9 @@ const black = 'pbnrqk';
 
 const defaultSize = 480;
 
-const defaultLight = 'rgb(181, 136, 99)';
+const defaultLight = 'rgb(240, 217, 181)';
 
-const defaultDark = 'rgb(240, 217, 181)';
+const defaultDark = 'rgb(181, 136, 99)';
 
 const deafultStyle = 'merida';
 

@@ -238,7 +238,7 @@ The resulting PNG's will be 1200px by 1200px.
 
 | Option | Type     | Default | Example          |
 |----------|----------|---------|------------------|
-| light     | `string` | *"rgb(181, 136, 99)"* | *"rgb(250,250,250)", "white", "#ffffff"* |
+| light     | `string` | *"rgb(240, 217, 181)"* | *"rgb(250,250,250)", "white", "#ffffff"* |
 | dark     | `string` | *"rgb(181, 136, 99)"* | *"rgb(0,0,0)", "black", "#000000"* |
 
 Light and dark determines the colors of both the light and dark squares respectively.
