@@ -46,9 +46,9 @@ declare class ChessImageGenerator {
     loadFEN(fen: string): Promise<void>;
     /**
      * Loads position array into chess.js object
-     * @param {Array<string>} array Chess position array
+     * @param {string[][]} array Chess position array
      */
-    loadArray(array: Array<string>): void;
+    loadArray(array: string[][]): void;
     /**
      * Generates buffer image based on position
      * @returns {Promise<Buffer>} Image buffer
