@@ -11,7 +11,7 @@ const {
   defaultSize,
   defaultLight,
   defaultDark,
-  deafultStyle,
+  defaultStyle,
   filePaths,
 } = require("./config/index");
 /**
@@ -25,7 +25,6 @@ const {
 /**
  * Object constructor, initializes options.
  * @param {Options} [options] Optional options
-
  */
 function ChessImageGenerator(options = {}) {
   this.chess = new Chess();
@@ -33,7 +32,8 @@ function ChessImageGenerator(options = {}) {
   this.size = options.size || defaultSize;
   this.light = options.light || defaultLight;
   this.dark = options.dark || defaultDark;
-  this.style = options.style || deafultStyle;
+  this.style = options.style || defaultStyle;
+  this.flipped = options.flipped || false;
 
   this.ready = false;
 }
@@ -103,6 +103,9 @@ ChessImageGenerator.prototype = {
     ctx.fillStyle = this.light;
     ctx.fill();
 
+    const row = this.flipped ? r => r + 1 : r => 7 - r + 1;
+    const col = this.flipped ? c => c : c => 7 - c;
+
     for (let i = 0; i < 8; i += 1) {
       for (let j = 0; j < 8; j += 1) {
         if ((i + j) % 2 === 0) {
@@ -117,7 +120,7 @@ ChessImageGenerator.prototype = {
           ctx.fill();
         }
 
-        const piece = this.chess.get(cols[7 - j] + (7 - i + 1));
+        const piece = this.chess.get(cols[col(j)] + row(i));
         if (
           piece &&
           piece.type !== "" &&
