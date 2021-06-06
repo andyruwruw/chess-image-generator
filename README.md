@@ -278,7 +278,7 @@ var imageGenerator = new ChessImageGenerator({
 
 | Option | Type     | Default | Example          |
 |----------|----------|---------|------------------|
-| style     | *string* | *"merida""* | *"alpha", "cheq"* |
+| style     | *string* | *"merida"* | *"alpha", "cheq"* |
 
 The piece style determines the used style of pieces to create the image.
 

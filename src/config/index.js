@@ -10,7 +10,7 @@ const defaultLight = 'rgb(240, 217, 181)';
 
 const defaultDark = 'rgb(181, 136, 99)';
 
-const deafultStyle = 'merida';
+const defaultStyle = 'merida';
 
 const filePaths = {
   wp: 'WhitePawn',
@@ -34,6 +34,6 @@ module.exports = {
   defaultSize,
   defaultLight,
   defaultDark,
-  deafultStyle,
+  defaultStyle,
   filePaths,
 };

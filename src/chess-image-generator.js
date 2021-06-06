@@ -14,7 +14,7 @@ const {
   defaultSize,
   defaultLight,
   defaultDark,
-  deafultStyle,
+  defaultStyle,
   filePaths,
 } = require('./config/index');
 
@@ -32,7 +32,7 @@ function ChessImageGenerator(options = {}) {
   this.size = options.size || defaultSize;
   this.light = options.light || defaultLight;
   this.dark = options.dark || defaultDark;
-  this.style = options.style || deafultStyle;
+  this.style = options.style || defaultStyle;
 
   this.ready = false;
 }
