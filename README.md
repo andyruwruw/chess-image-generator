@@ -39,6 +39,7 @@ Output to either:
     - [Canvas Size](#canvas-size)
     - [Board Colors](#board-colors)
     - [Piece Style](#piece-style)
+    - [Board POV](#board-pov)
 - [Dependencies](#dependencies)
 
 
@@ -62,7 +63,8 @@ var imageGenerator = new ChessImageGenerator({
     size: 720,
     light: 'rgb(200, 200, 200)',
     dark: '#333333',
-    style: 'merida'
+    style: 'merida',
+    flipped: true
 });
 ```
 
@@ -206,6 +208,7 @@ You have three options for customization of the resulting PNG:
 - [Canvas Size](#canvas-size)
 - [Board Colors](#board-colors)
 - [Piece Style](#piece-style)
+- [Board POV](#board-pov)
 
 These customizations are passed to the constructor when you create an instance of chess-image-generator:
 
@@ -214,7 +217,8 @@ var imageGenerator = new ChessImageGenerator({
     size: 720,
     light: 'rgb(200, 200, 200)',
     dark: '#333333',
-    style: 'merida'
+    style: 'merida',
+    flipped: true
 });
 ```
 
@@ -281,6 +285,16 @@ var imageGenerator = new ChessImageGenerator({
 | style     | *string* | *"merida"* | *"alpha", "cheq"* |
 
 The piece style determines the used style of pieces to create the image.
+
+
+# Board POV
+| Option  | Type      | Default | Example       |
+|---------|-----------|---------|---------------|
+| flipped | `boolean` | *false* | *true, false* |
+
+Determines if the board should be flipped.  
+If set to `false`, the image will be from white's point of view.
+If set to `true`, the image will be from black's point of view.  
 
 ## Style Choices:
 - alpha

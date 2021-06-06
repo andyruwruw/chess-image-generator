@@ -25,6 +25,7 @@ const {
  * @param {string} light Color of light squares
  * @param {string} dark Color of dark squares
  * @param {style} style Desired style of pieces
+ * @param {boolean} flipped Sets desired board side
  */
 function ChessImageGenerator(options = {}) {
   this.chess = new Chess();
@@ -33,6 +34,7 @@ function ChessImageGenerator(options = {}) {
   this.light = options.light || defaultLight;
   this.dark = options.dark || defaultDark;
   this.style = options.style || defaultStyle;
+  this.flipped = options.flipped || false;
 
   this.ready = false;
 }
@@ -107,6 +109,9 @@ ChessImageGenerator.prototype = {
     ctx.fillStyle = this.light;
     ctx.fill();
 
+    const row = this.flipped ? r => r + 1 : r => 7 - r + 1;
+    const col = this.flipped ? c => c : c => 7 - c;
+
     for (let i = 0; i < 8; i += 1) {
       for (let j = 0; j < 8; j += 1) {
        
@@ -121,8 +126,8 @@ ChessImageGenerator.prototype = {
           ctx.fillStyle = this.dark;
           ctx.fill();
         }
-         
-        const piece = this.chess.get(cols[7 - j] + ((7 - i) + 1));
+
+        const piece = this.chess.get(cols[col(j)] + row(i));
          if (piece && piece.type !== '' && black.includes(piece.type.toLowerCase())) {
           const image = `resources/${this.style}/${filePaths[`${piece.color}${piece.type}`]}.png`;
           const imageFile = await loadImage(path.join(__dirname, image));
