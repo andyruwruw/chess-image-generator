@@ -17,14 +17,18 @@ const {
   deafultStyle,
   filePaths,
 } = require('./config/index');
-
+/**
+ * 
+ * @typedef {object} Options 
+ * @property {number} [size] Pixel length of desired image
+ * @property {string} [light] Color of light squares
+ * @property {string} [dark] Color of dark squares
+ * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+ */
 /**
  * Object constructor, initializes options.
- * @param {object} options Optional options
- * @param {number} size Pixel length of desired image
- * @param {string} light Color of light squares
- * @param {string} dark Color of dark squares
- * @param {style} style Desired style of pieces
+ * @param {Options} [options] Optional options
+
  */
 function ChessImageGenerator(options = {}) {
   this.chess = new Chess();
@@ -36,6 +40,7 @@ function ChessImageGenerator(options = {}) {
 
   this.ready = false;
 }
+
 
 ChessImageGenerator.prototype = {
   /**
@@ -87,7 +92,7 @@ ChessImageGenerator.prototype = {
 
   /**
    * Generates buffer image based on position
-   * @returns {Buffer} Image buffer
+   * @returns {Promise<Buffer>} Image buffer
    */
   async generateBuffer() {
     if (!this.ready) {
