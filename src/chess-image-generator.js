@@ -21,6 +21,7 @@ const {
  * @property {string} [light] Color of light squares
  * @property {string} [dark] Color of dark squares
  * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+ * @property {boolean} [flipped] Whether the board is to be flipped or not
  */
 /**
  * Object constructor, initializes options.
