@@ -5,7 +5,7 @@ export = ChessImageGenerator;
  * @property {number} [size] Pixel length of desired image
  * @property {string} [light] Color of light squares
  * @property {string} [dark] Color of dark squares
- * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+ * @property {"merida"|"alpha"|"cheq"|"cburnett"|"leipzig"} [style] Desired style of pieces
  * @property {boolean} [flipped] Whether the board is to be flipped or not
  */
 /**
@@ -21,7 +21,7 @@ declare class ChessImageGenerator {
    * @property {number} [size] Pixel length of desired image
    * @property {string} [light] Color of light squares
    * @property {string} [dark] Color of dark squares
-   * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+   * @property {"merida"|"alpha"|"cheq"|"cburnett"|"leipzig"} [style] Desired style of pieces
    * @property {boolean} [flipped] Whether the board is to be flipped or not
    */
   /**
@@ -34,7 +34,7 @@ declare class ChessImageGenerator {
   size: number;
   light: string;
   dark: string;
-  style: "merida" | "alpha" | "cheq";
+  style: "merida" | "alpha" | "cheq" | "cburnett" | "leipzig";
   ready: boolean;
   /**
    * Loads PGN into chess.js object.
@@ -81,7 +81,7 @@ type Options = {
   /**
    * Desired style of pieces
    */
-  style?: "merida" | "alpha" | "cheq";
+  style?: "merida" | "alpha" | "cheq" | "cburnett" | "leipzig";
   /**
    * Whether the board is to be flipped or not
    */

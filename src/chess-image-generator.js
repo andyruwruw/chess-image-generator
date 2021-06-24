@@ -20,7 +20,7 @@ const {
  * @property {number} [size] Pixel length of desired image
  * @property {string} [light] Color of light squares
  * @property {string} [dark] Color of dark squares
- * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+ * @property {"merida"|"alpha"|"cheq"|"cburnett"|"leipzig"} [style] Desired style of pieces
  * @property {boolean} [flipped] Whether the board is to be flipped or not
  */
 /**
