@@ -1,5 +1,5 @@
 const { createCanvas, loadImage } = require("canvas");
-const Frame = require("canvas-to-buffer");
+const toBuffer = require('./buffer.js')
 const { Chess } = require("chess.js");
 const fs = require("fs");
 const path = require("path");
@@ -142,12 +142,7 @@ ChessImageGenerator.prototype = {
       }
     }
 
-    const frame = new Frame(canvas, {
-      image: {
-        types: ["png"],
-      },
-    });
-    return frame.toBuffer();
+    return toBuffer(canvas)
   },
 
   /**
