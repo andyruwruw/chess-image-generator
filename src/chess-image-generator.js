@@ -99,26 +99,22 @@ ChessImageGenerator.prototype = {
     const canvas = createCanvas(this.size, this.size);
     const ctx = canvas.getContext("2d");
 
-    ctx.beginPath();
-    ctx.rect(0, 0, this.size, this.size);
     ctx.fillStyle = this.light;
-    ctx.fill();
+    ctx.fillRect(0, 0, this.size, this.size);
 
-    const row = this.flipped ? r => r + 1 : r => 7 - r + 1;
-    const col = this.flipped ? c => c : c => 7 - c;
+    const row = this.flipped ? r => 7 - r + 1 : r => r + 1;
+    const col = this.flipped ? c => 7 - c : c => c;
 
     for (let i = 0; i < 8; i += 1) {
       for (let j = 0; j < 8; j += 1) {
         if ((i + j) % 2 === 0) {
-          ctx.beginPath();
-          ctx.rect(
-            (this.size / 8) * (7 - j + 1) - this.size / 8,
-            (this.size / 8) * i,
+          ctx.fillStyle = this.dark;
+          ctx.fillRect(
+            (this.size / 8) * j,
+            (this.size / 8) * (7 - i),
             this.size / 8,
             this.size / 8
           );
-          ctx.fillStyle = this.dark;
-          ctx.fill();
         }
 
         const piece = this.chess.get(cols[col(j)] + row(i));
@@ -133,8 +129,8 @@ ChessImageGenerator.prototype = {
           const imageFile = await loadImage(path.join(__dirname, image));
           await ctx.drawImage(
             imageFile,
-            (this.size / 8) * (7 - j + 1) - this.size / 8,
-            (this.size / 8) * i,
+            (this.size / 8) * j,
+            (this.size / 8) * (7 - i),
             this.size / 8,
             this.size / 8
           );
