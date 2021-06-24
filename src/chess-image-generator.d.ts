@@ -40,12 +40,12 @@ declare class ChessImageGenerator {
    * Loads PGN into chess.js object.
    * @param {string} pgn Chess game PGN
    */
-  loadPGN(pgn: string): Promise<void>;
+  loadPGN(pgn: string): void;
   /**
    * Loads FEN into chess.js object
    * @param {string} fen Chess position FEN
    */
-  loadFEN(fen: string): Promise<void>;
+  loadFEN(fen: string): void;
   /**
    * Loads position array into chess.js object
    * @param {string[][]} array Chess position array

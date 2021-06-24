@@ -44,7 +44,7 @@ ChessImageGenerator.prototype = {
    * Loads PGN into chess.js object.
    * @param {string} pgn Chess game PGN
    */
-  async loadPGN(pgn) {
+  loadPGN(pgn) {
     if (!this.chess.load_pgn(pgn)) {
       throw new Error("PGN could not be read successfully");
     } else {
@@ -56,7 +56,7 @@ ChessImageGenerator.prototype = {
    * Loads FEN into chess.js object
    * @param {string} fen Chess position FEN
    */
-  async loadFEN(fen) {
+  loadFEN(fen) {
     if (!this.chess.load(fen)) {
       throw new Error("FEN could not be read successfully");
     } else {
