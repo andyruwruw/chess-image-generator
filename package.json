@@ -25,9 +25,7 @@
   "homepage": "https://github.com/andyruwruw/chessimage#readme",
   "dependencies": {
     "canvas": "^2.6.1",
-    "chess.js": "^0.10.2",
-    "fs": "0.0.1-security",
-    "path": "^0.12.7"
+    "chess.js": "^0.10.2"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
