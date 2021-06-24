@@ -47,16 +47,18 @@ Output to either:
 
 Install via node:
 
-    $ npm i -S chess-image-generator
+```bash
+npm install chess-image-generator
+```
 
 Then import the package and instantiate:
-```
+```js
 var ChessImageGenerator = require('chess-image-generator');
 
 var imageGenerator = new ChessImageGenerator();
 ```
 or pass in [options for customization](#image-customization):
-```
+```js
 var ChessImageGenerator = require('chess-image-generator');
 
 var imageGenerator = new ChessImageGenerator({
@@ -366,10 +368,10 @@ var imageGenerator = new ChessImageGenerator({
 # Dependencies
 
 - [canvas](https://www.npmjs.com/package/canvas)
-- [canvas-to-buffer](https://www.npmjs.com/package/canvas-to-buffer)
 - [chess.js](https://www.npmjs.com/package/chess.js)
-- [fs](https://www.npmjs.com/package/fs)
-- [path](https://www.npmjs.com/package/path)
+
+### Optional Packages
+- [canvas-to-buffer](https://www.npmjs.com/package/canvas-to-buffer) for faster image buffer creation (`npm install canvas-to-buffer`)
 
 ---
 
