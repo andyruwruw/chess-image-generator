@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "Generate images based on various forms of chess notation.",
   "main": "src/index.js",
+  "types": "src",
   "scripts": {
     "test": "node ./test/index.js"
   },
