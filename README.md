@@ -37,6 +37,7 @@ Output to either:
     - [into Buffer](#generate-a-buffer)
 - [Image Customization](#image-customization)
     - [Canvas Size](#canvas-size)
+    - [Padding](#padding)
     - [Board Colors](#board-colors)
     - [Piece Style](#piece-style)
     - [Board POV](#board-pov)
@@ -204,8 +205,9 @@ The buffer will be returned from the function. Use promises or async await to en
 
 # Image Customization
 
-You have three options for customization of the resulting PNG:
+You have several options for customization of the resulting PNG:
 - [Canvas Size](#canvas-size)
+- [Padding](#padding)
 - [Board Colors](#board-colors)
 - [Piece Style](#piece-style)
 - [Board POV](#board-pov)
@@ -215,6 +217,7 @@ These customizations are passed to the constructor when you create an instance o
 ```
 var imageGenerator = new ChessImageGenerator({
     size: 720,
+    padding: [10, 10, 10, 10],
     light: 'rgb(200, 200, 200)',
     dark: '#333333',
     style: 'merida',
@@ -237,6 +240,22 @@ var imageGenerator = new ChessImageGenerator({
 });
 ```
 The resulting PNG's will be 1200px by 1200px.
+
+# Padding
+
+| Option  | Type     | Default   | Example       |
+|---------|----------|-----------|---------------|
+| padding | `array`  | [0,0,0,0] | [10,10,10,10] |
+
+Padding determines in **pixels** how much padding is added to each side of the board. The values are in order of top, right, bottom and left.
+
+### Example:
+```
+var imageGenerator = new ChessImageGenerator({
+    padding: [10,10,10,10],
+});
+```
+The resulting PNG's will have a padding of 10px on each side, increasing the image width and height by 20px.
 
 # Board Colors
 
