@@ -9,6 +9,7 @@ const {
   white,
   black,
   defaultSize,
+  defaultPadding,
   defaultLight,
   defaultDark,
   defaultStyle,
@@ -31,6 +32,7 @@ function ChessImageGenerator(options = {}) {
   this.chess = new Chess();
 
   this.size = options.size || defaultSize;
+  this.padding = options.padding || defaultPadding;
   this.light = options.light || defaultLight;
   this.dark = options.dark || defaultDark;
   this.style = options.style || defaultStyle;
@@ -96,11 +98,11 @@ ChessImageGenerator.prototype = {
       throw new Error("Load a position first");
     }
 
-    const canvas = createCanvas(this.size, this.size);
+    const canvas = createCanvas(this.size + this.padding[1] + this.padding[3], this.size + this.padding[0] + this.padding[2]);
     const ctx = canvas.getContext("2d");
 
     ctx.beginPath();
-    ctx.rect(0, 0, this.size, this.size);
+    ctx.rect(0, 0, this.size + this.padding[1] + this.padding[3], this.size + this.padding[0] + this.padding[2]);
     ctx.fillStyle = this.light;
     ctx.fill();
 
@@ -112,8 +114,8 @@ ChessImageGenerator.prototype = {
         if ((i + j) % 2 === 0) {
           ctx.beginPath();
           ctx.rect(
-            (this.size / 8) * (7 - j + 1) - this.size / 8,
-            (this.size / 8) * i,
+            ((this.size / 8) * (7 - j + 1) - this.size / 8) + this.padding[3],
+            ((this.size / 8) * i) + this.padding[0],
             this.size / 8,
             this.size / 8
           );
@@ -133,8 +135,8 @@ ChessImageGenerator.prototype = {
           const imageFile = await loadImage(path.join(__dirname, image));
           await ctx.drawImage(
             imageFile,
-            (this.size / 8) * (7 - j + 1) - this.size / 8,
-            (this.size / 8) * i,
+            ((this.size / 8) * (7 - j + 1) - this.size / 8) + this.padding[3],
+            ((this.size / 8) * i) + this.padding[0],
             this.size / 8,
             this.size / 8
           );
