@@ -12,6 +12,7 @@ const {
   defaultPadding,
   defaultLight,
   defaultDark,
+  defaultHighlight,
   defaultStyle,
   filePaths,
 } = require("./config/index");
@@ -21,6 +22,7 @@ const {
  * @property {number} [size] Pixel length of desired image
  * @property {string} [light] Color of light squares
  * @property {string} [dark] Color of dark squares
+ * @property {string} [highlight] Color of highlight overlay
  * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
  * @property {boolean} [flipped] Whether the board is to be flipped or not
  */
@@ -30,11 +32,13 @@ const {
  */
 function ChessImageGenerator(options = {}) {
   this.chess = new Chess();
+  this.highlightedSquares = [];
 
   this.size = options.size || defaultSize;
   this.padding = options.padding || defaultPadding;
   this.light = options.light || defaultLight;
   this.dark = options.dark || defaultDark;
+  this.highlight = options.highlight || defaultHighlight;
   this.style = options.style || defaultStyle;
   this.flipped = options.flipped || false;
 
@@ -90,6 +94,14 @@ ChessImageGenerator.prototype = {
   },
 
   /**
+   * Set which squares should be highlighted
+   * @param {string[]} array chess square coordinate array
+   */
+  highlightSquares(array) {
+    this.highlightedSquares = array;
+  },
+
+  /**
    * Generates buffer image based on position
    * @returns {Promise<Buffer>} Image buffer
    */
@@ -111,6 +123,8 @@ ChessImageGenerator.prototype = {
 
     for (let i = 0; i < 8; i += 1) {
       for (let j = 0; j < 8; j += 1) {
+        const coords = cols[col(j)] + row(i);
+
         if ((i + j) % 2 === 0) {
           ctx.beginPath();
           ctx.rect(
@@ -123,7 +137,20 @@ ChessImageGenerator.prototype = {
           ctx.fill();
         }
 
-        const piece = this.chess.get(cols[col(j)] + row(i));
+        if (this.highlightedSquares.includes(coords)) {
+          ctx.beginPath();
+          ctx.rect(
+            ((this.size / 8) * (7 - j + 1) - this.size / 8) + this.padding[3],
+            ((this.size / 8) * i) + this.padding[0],
+            this.size / 8,
+            this.size / 8
+          );
+          ctx.fillStyle = this.highlight;
+          ctx.fill();
+        }
+
+        const piece = this.chess.get(coords);
+
         if (
           piece &&
           piece.type !== "" &&
