@@ -394,7 +394,7 @@ All images were found at [Marcel van Kervinck](https://marcelk.net/chess/pieces/
 
 ```
 var imageGenerator = new ChessImageGenerator({
-    style: alpha,
+    style: 'alpha',
 });
 ```
 
