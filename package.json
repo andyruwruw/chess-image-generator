@@ -1,6 +1,6 @@
 {
-  "name": "chess-image-generator",
-  "version": "1.2.0",
+  "name": "chess-fen2img",
+  "version": "1.0.0",
   "description": "Generate images based on various forms of chess notation.",
   "main": "src/index.js",
   "types": "src",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andyruwruw/chessimage.git"
+    "url": "git+https://github.com/AdibHoque/chess-fen2img.git"
   },
   "keywords": [
     "Chess",
@@ -18,12 +18,12 @@
     "JPG",
     "Image"
   ],
-  "author": "Andrew Young",
+  "author": "Adib Hoque",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andyruwruw/chessimage/issues"
+    "url": "https://github.com/AdibHoque/chess-fen2img/issues"
   },
-  "homepage": "https://github.com/andyruwruw/chessimage#readme",
+  "homepage": "https://github.com/AdibHoque/chess-fen2img/blob/master/README.md/blob/master/README.md",
   "dependencies": {
     "canvas": "^2.6.1",
     "canvas-to-buffer": "^1.1.0",
