@@ -13,7 +13,7 @@
 
 That you could create more amazing ChessBoards like below with these new pieces!
 
-<div style="flex">
+<div style="display:flex; justify-content: center; align-items: center; gap: 10px;">
     <img width="300" height="300" src="./documentation/neo-board.png">
     <img width="300" height="300" src="./documentation/glass-board.png">
     <img width="300" height="300" src="./documentation/wood-board.png">
