@@ -1,7 +1,7 @@
 {
   "name": "chess-fen2img",
   "version": "1.0.0",
-  "description": "Generate images based on various forms of chess notation.",
+  "description": "Generate ChessBoards like chess.com & lichess through FEN, PGN & more",
   "main": "src/index.js",
   "types": "src",
   "scripts": {
