@@ -14,10 +14,24 @@
 That you could create more amazing ChessBoards like below with these new pieces!
 
 <div style="display:flex; justify-content: center; align-items: center; gap: 10px;">
+<div>
+ <h4>Pieces: Neo<br>Light: <span style="color: #EEEED2;">#EEEED2</span><br>Dark: <span style="color: #769657;">#769657</span></h4>
     <img width="300" height="300" src="./documentation/neo-board.png">
+</div>
+
+<div>
+ <h4>Pieces: Glass<br>Light: <span style="color: #D9E2E8;">#D9E2E8</span><br>Dark: <span style="color: #7093A9;">#7093A9</span></h4>
     <img width="300" height="300" src="./documentation/glass-board.png">
+</div>
+<div>
+ <h4>Pieces: Game Room<br>Light: <span style="color: #91B5A4;">#91B5A4</span><br>Dark: <span style="color: #6E9281;">#6E9281</span></h4>
+    <img width="300" height="300" src="./documentation/game_room-board.png">
+</div>
+<div>
+ <h4>Pieces: Wood<br>Light: <span style="color: #F0D9B5;">#F0D9B5</span><br>Dark: <span style="color: #B58863;">#B58863</span></h4>
     <img width="300" height="300" src="./documentation/wood-board.png">
-  
+</div>   
+        
 </div>
 
 # Overview
