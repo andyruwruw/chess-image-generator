@@ -1,4 +1,4 @@
-export = ChessImageGenerator;
+export = ChessImageGenerator
 /**
  *
  * @typedef {object} Options
@@ -13,7 +13,7 @@ export = ChessImageGenerator;
  * @param {Options} [options] Optional options
 
  */
-declare function ChessImageGenerator(options?: Options): void;
+declare function ChessImageGenerator(options?: Options): void
 declare class ChessImageGenerator {
   /**
    *
@@ -29,61 +29,61 @@ declare class ChessImageGenerator {
      * @param {Options} [options] Optional options
     
      */
-  constructor(options?: Options);
-  chess: any;
-  size: number;
-  light: string;
-  dark: string;
-  style: "merida" | "alpha" | "cheq";
-  ready: boolean;
+  constructor(options?: Options)
+  chess: any
+  size: number
+  light: string
+  dark: string
+  style: "merida" | "alpha" | "cheq"
+  ready: boolean
   /**
    * Loads PGN into chess.js object.
    * @param {string} pgn Chess game PGN
    */
-  loadPGN(pgn: string): Promise<void>;
+  loadPGN(pgn: string): Promise<void>
   /**
    * Loads FEN into chess.js object
    * @param {string} fen Chess position FEN
    */
-  loadFEN(fen: string): Promise<void>;
+  loadFEN(fen: string): Promise<void>
   /**
    * Loads position array into chess.js object
    * @param {string[][]} array Chess position array
    */
-  loadArray(array: string[][]): void;
+  loadArray(array: string[][]): void
   /**
    * Generates buffer image based on position
    * @returns {Promise<Buffer>} Image buffer
    */
-  generateBuffer(): Promise<any>;
+  generateBuffer(): Promise<any>
   /**
    * Generates PNG image based on position
    * @param {string} pngPath File name
    */
-  generatePNG(pngPath: string): Promise<void>;
+  generatePNG(pngPath: string): Promise<void>
 }
 declare namespace ChessImageGenerator {
-  export { Options };
+  export {Options}
 }
 type Options = {
   /**
    * Pixel length of desired image
    */
-  size?: number;
+  size?: number
   /**
    * Color of light squares
    */
-  light?: string;
+  light?: string
   /**
    * Color of dark squares
    */
-  dark?: string;
+  dark?: string
   /**
    * Desired style of pieces
    */
-  style?: "merida" | "alpha" | "cheq";
+  style?: "merida" | "alpha" | "cheq"
   /**
    * Whether the board is to be flipped or not
    */
   flipped?: boolean
-};
+}

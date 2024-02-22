@@ -156,9 +156,8 @@ ChessImageGenerator.prototype = {
           piece.type !== "" &&
           black.includes(piece.type.toLowerCase())
         ) {
-          const image = `resources/${this.style}/${
-            filePaths[`${piece.color}${piece.type}`]
-          }.png`;
+          const image = `resources/${this.style}/${filePaths[`${piece.color}${piece.type}`]
+            }.png`;
           const imageFile = await loadImage(path.join(__dirname, image));
           await ctx.drawImage(
             imageFile,
