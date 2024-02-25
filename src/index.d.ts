@@ -1,2 +1,2 @@
-export = ChessImageGenerator;
-import ChessImageGenerator = require("./chess-image-generator");
+export = ChessImageGenerator
+import ChessImageGenerator = require("./chess-fen2img")
