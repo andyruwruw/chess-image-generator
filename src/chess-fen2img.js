@@ -23,8 +23,9 @@ const {
  * @property {string} [light] Color of light squares
  * @property {string} [dark] Color of dark squares
  * @property {string} [highlight] Color of highlight overlay
- * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+ * @property {"neo"|"glass"|"wood"|"game_room"|"merida"|"alpha"|"cheq"} [style] Desired style of pieces
  * @property {boolean} [flipped] Whether the board is to be flipped or not
+ * @property {boolean} [notations] Whether the board should have notations or not
  */
 /**
  * Object constructor, initializes options.
@@ -41,6 +42,7 @@ function ChessImageGenerator(options = {}) {
   this.highlight = options.highlight || defaultHighlight;
   this.style = options.style || defaultStyle;
   this.flipped = options.flipped || false;
+  this.notations = options.notations || false;
 
   this.ready = false;
 }
@@ -168,6 +170,25 @@ ChessImageGenerator.prototype = {
           );
         }
       }
+    }
+
+    if (this.notations && this.padding == defaultPadding) {
+      if (this.flipped) {
+        const imageFile = await loadImage(path.join(__dirname, `res/BlackPovNotations.png`));
+        ctx.globalAlpha = 0.4;
+        await ctx.drawImage(
+          imageFile, 0, 0, this.size, this.size);
+        ctx.globalAlpha = 1.0;
+      }
+
+      if (!this.flipped) {
+        const imageFile = await loadImage(path.join(__dirname, `res/WhitePovNotations.png`));
+        ctx.globalAlpha = 0.4;
+        await ctx.drawImage(
+          imageFile, 0, 0, this.size, this.size);
+        ctx.globalAlpha = 1.0;
+      }
+
     }
 
     const frame = new Frame(canvas, {

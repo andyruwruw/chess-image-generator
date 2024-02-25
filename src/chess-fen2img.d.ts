@@ -7,6 +7,7 @@ export = ChessImageGenerator
  * @property {string} [dark] Color of dark squares
  * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
  * @property {boolean} [flipped] Whether the board is to be flipped or not
+ * @property {boolean} [notations] Whether the board should have notations or not
  */
 /**
  * Object constructor, initializes options.
@@ -21,8 +22,9 @@ declare class ChessImageGenerator {
    * @property {number} [size] Pixel length of desired image
    * @property {string} [light] Color of light squares
    * @property {string} [dark] Color of dark squares
-   * @property {"merida"|"alpha"|"cheq"} [style] Desired style of pieces
+   * @property {"neo" | "glass" | "wood" | "game_room" | "merida" | "alpha" | "cheq"} [style] Desired style of pieces
    * @property {boolean} [flipped] Whether the board is to be flipped or not
+   * @property {boolean} [notations] Whether the board should have notations or not
    */
   /**
      * Object constructor, initializes options.
@@ -34,7 +36,7 @@ declare class ChessImageGenerator {
   size: number
   light: string
   dark: string
-  style: "merida" | "alpha" | "cheq"
+  style: "neo" | "glass" | "wood" | "game_room" | "merida" | "alpha" | "cheq"
   ready: boolean
   /**
    * Loads PGN into chess.js object.
@@ -81,9 +83,13 @@ type Options = {
   /**
    * Desired style of pieces
    */
-  style?: "merida" | "alpha" | "cheq"
+  style?: "neo" | "glass" | "wood" | "game_room" | "merida" | "alpha" | "cheq"
   /**
    * Whether the board is to be flipped or not
    */
   flipped?: boolean
+  /**
+   * Whether the board should have notations or not
+   */
+  notations?: boolean
 }

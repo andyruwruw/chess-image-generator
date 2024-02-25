@@ -9,9 +9,9 @@
     <a href="#"><img src="https://img.shields.io/npm/dt/chess-fen2img"/></a>
 </p>
 
-# What's the diffrence?
+# Why pick this over original package?
 
-That you could create more amazing ChessBoards like below with these new pieces!
+Cause you can generate more visually appealing Chess Boards with the new added pieces!
 
 <div style="display:flex; justify-content: center; align-items: center; gap: 10px;">
 <div>
@@ -70,9 +70,13 @@ Output to either:
   - [Board Colors](#board-colors)
   - [Piece Style](#piece-style)
   - [Board POV](#board-pov)
+  - [Rank & File Notations](#notations)
 - [Dependencies](#dependencies)
 
 # Installation
+
+> [!CAUTION]
+> Version 1.0.0 may not work so make sure to install Version 1.0.1 & above only.
 
 Install via node:
 
@@ -96,7 +100,8 @@ var imageGenerator = new ChessImageGenerator({
     light: 'rgb(200, 200, 200)',
     dark: '#333333',
     style: 'merida',
-    flipped: true
+    flipped: true,
+    notations: true,
 });
 ```
 
@@ -264,6 +269,7 @@ You have several options for customization of the resulting PNG:
 - [Board Colors](#board-colors)
 - [Piece Style](#piece-style)
 - [Board POV](#board-pov)
+- [Rank & File Notations](#notations)
 
 These customizations are passed to the constructor when you create an instance of chess-fen2img:
 
@@ -274,7 +280,8 @@ var imageGenerator = new ChessImageGenerator({
     light: 'rgb(200, 200, 200)',
     dark: '#333333',
     style: 'merida',
-    flipped: true
+    flipped: true,
+    notations: true,
 });
 ```
 
@@ -344,23 +351,24 @@ Colors can be passed in a variety of formats:
 ## Customized Coloring:
 
 <p align="">
-    <img width="300" src="./documentation/colors2.png">
+    <img width="300" src="./documentation/neo-board.png">
 </p>
 
 ### Example:
 
 ```
 var imageGenerator = new ChessImageGenerator({
-    light: 'rgb(200, 200, 200)',
-    dark: 'rgb(20, 20, 20)',
+    style: "neo",
+    light: '#EEEED2',
+    dark: '#769657',
 });
 ```
 
 # Piece Style
 
-| Option | Type     | Default    | Example           |
-| ------ | -------- | ---------- | ----------------- |
-| style  | _string_ | _"merida"_ | _"alpha", "cheq"_ |
+| Option | Type     | Default    | Example         |
+| ------ | -------- | ---------- | --------------- |
+| style  | _string_ | _"merida"_ | _"neo", "wood"_ |
 
 The piece style determines the used style of pieces to create the image.
 
@@ -373,6 +381,33 @@ The piece style determines the used style of pieces to create the image.
 Determines if the board should be flipped.  
 If set to `false`, the image will be from white's point of view.
 If set to `true`, the image will be from black's point of view.
+
+# Rank & File Notations
+
+> [!NOTE]  
+> Padding must stay false or default value for Notations to work.
+
+| Option    | Type      | Default | Example       |
+| --------- | --------- | ------- | ------------- |
+| notations | `boolean` | _false_ | _true, false_ |
+
+Determines if the board should have Rank & File Notations.
+
+<p align="">
+    <img width="300" src="./documentation/neo-board-notations.png">
+</p>
+
+### Example:
+
+```
+var imageGenerator = new ChessImageGenerator({
+    style: "neo",
+    light: '#EEEED2',
+    dark: '#769657',
+    flipped: true,
+    notations: true,
+});
+```
 
 ## Style Choices:
 
@@ -475,7 +510,7 @@ If set to `true`, the image will be from black's point of view.
     <img width="60" src="./src/resources/merida/WhitePawn.png">
 </div>
 
-All images were found at [Marcel van Kervinck](https://marcelk.net/chess/pieces/) &[GiorgioMegrelli](https://github.com/GiorgioMegrelli/chess.com-boards-and-pieces)!
+All images were found at [Marcel van Kervinck](https://marcelk.net/chess/pieces/) & [GiorgioMegrelli](https://github.com/GiorgioMegrelli/chess.com-boards-and-pieces)!
 
 ### Example:
 
